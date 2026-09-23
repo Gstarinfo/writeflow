@@ -1,0 +1,73 @@
+/* Thin Wavy Underline Inline Marks using Crisp SVG Patterns */
+.wf-inline-mark,
+mark.wf-inline-mark {
+  display: inline;
+  position: relative;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  border-radius: 2px;
+  cursor: pointer;
+  pointer-events: none;
+  text-decoration: none !important;
+  background-repeat: repeat-x !important;
+  background-position: left bottom 1px !important;
+  background-size: 8px 4px !important;
+  padding-bottom: 2px !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  border: none !important;
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.wf-inline-mark.severity-error {
+  background-color: rgba(248, 81, 73, 0.18);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%23f85149' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.wf-inline-mark.severity-warning {
+  background-color: rgba(210, 153, 34, 0.18);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%23d29922' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.wf-inline-mark.severity-improvement {
+  background-color: rgba(88, 166, 255, 0.18);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%2358a6ff' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.wf-inline-mark.severity-info {
+  background-color: rgba(163, 113, 247, 0.18);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%23a371f7' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme='light'] .wf-inline-mark.severity-error {
+  background-color: rgba(220, 38, 38, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%23dc2626' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme='light'] .wf-inline-mark.severity-warning {
+  background-color: rgba(217, 119, 6, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%23d97706' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme='light'] .wf-inline-mark.severity-improvement {
+  background-color: rgba(2, 132, 199, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%230284c7' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[data-theme='light'] .wf-inline-mark.severity-info {
+  background-color: rgba(124, 58, 237, 0.12);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 4' width='8' height='4'%3E%3Cpath d='M 0 2 Q 2 0, 4 2 T 8 2' fill='none' stroke='%237c3aed' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.wf-inline-mark.hovered,
+.wf-inline-mark:hover {
+  background-color: rgba(248, 81, 73, 0.32) !important;
+  box-shadow: 0 0 8px rgba(248, 81, 73, 0.45);
+}
+
+.wf-inline-mark.active {
+  background-color: rgba(99, 102, 241, 0.35) !important;
+  box-shadow: 0 0 0 2px var(--color-brand);
+}

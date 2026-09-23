@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/document-model" },
+    { "path": "./packages/suggestion-system" },
+    { "path": "./engines/wordnet" },
+    { "path": "./packages/synonym-engine" },
+    { "path": "./engines/nlprule" },
+    { "path": "./packages/grammar-engine" },
+    { "path": "./packages/writing-core" },
+    { "path": "./packages/browser-adapters" },
+    { "path": "./packages/editor" }
+  ]
+}

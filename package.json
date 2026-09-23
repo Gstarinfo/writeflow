@@ -1,0 +1,32 @@
+{
+  "name": "writeflow-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "WriteFlow - Fast, private, local English writing assistant with Grammar & Synonym engines",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "engines/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@writeflow/web-editor",
+    "build": "npx tsc --build && npm run build:apps",
+    "build:apps": "npm run build --workspace=@writeflow/web-editor && npm run build --workspace=@writeflow/browser-extension",
+    "test": "node scripts/test-all.js"
+  },
+  "keywords": [
+    "writing-assistant",
+    "grammar-checker",
+    "wordnet",
+    "synonyms",
+    "nlprule",
+    "local-first",
+    "privacy"
+  ],
+  "author": "WriteFlow Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
