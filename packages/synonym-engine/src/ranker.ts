@@ -50,23 +50,38 @@ export function detectPosFromContext(targetWord: string, sentenceText: string = 
       const prevWord = targetIndex > 0 ? words[targetIndex - 1] : '';
       const nextWord = targetIndex < words.length - 1 ? words[targetIndex + 1] : '';
 
-      const determiners: string[] = ['the', 'a', 'an', 'this', 'that', 'my', 'your', 'his', 'her', 'their', 'our'];
-      const nounHints: string[] = ['bag', 'box', 'luggage', 'room', 'shirt', 'car', 'weight', 'task', 'color'];
+      const determiners: string[] = ['the', 'a', 'an', 'this', 'that', 'these', 'those', 'my', 'your', 'his', 'her', 'their', 'our'];
+      const prepositions: string[] = ['in', 'at', 'from', 'into', 'through', 'about', 'with', 'for', 'on', 'by', 'under', 'towards'];
+      const motionVerbs: string[] = ['go', 'goes', 'went', 'gone', 'walk', 'walks', 'walked', 'run', 'runs', 'ran', 'drive', 'drives', 'drove', 'travel', 'travels', 'head', 'heads'];
       const copulas: string[] = ['is', 'are', 'was', 'were', 'am', 'be', 'been', 'being', 'seems', 'feels', 'looks', 'tastes', 'sounds', 'remains'];
-      const modals: string[] = ['to', 'can', 'will', 'would', 'could', 'should', 'must', 'might', 'do', 'does', 'did'];
+      const trueModals: string[] = ['can', 'will', 'would', 'could', 'should', 'must', 'might', 'shall'];
 
       if (determiners.includes(prevWord)) {
-        if (nounHints.includes(nextWord)) {
-          return 'a'; // adjective
+        return 'n';
+      }
+
+      if (prepositions.includes(prevWord)) {
+        return 'n';
+      }
+
+      if (prevWord === 'to') {
+        const prevPrevWord = targetIndex > 1 ? words[targetIndex - 2] : '';
+        if (motionVerbs.includes(prevPrevWord)) {
+          return 'n'; // e.g. "go to school"
         }
-        return 'n'; // noun
+        // Check if word is primarily a verb in dictionary
+        const entries = wordNetProvider.getEntries(cleanTarget);
+        if (entries.some(e => e.pos === 'v')) {
+          return 'v'; // e.g. "to write", "to learn"
+        }
+        return entries[0]?.pos || 'n';
       }
 
       if (copulas.includes(prevWord)) {
         return 'a';
       }
 
-      if (modals.includes(prevWord)) {
+      if (trueModals.includes(prevWord)) {
         return 'v';
       }
 
@@ -87,7 +102,7 @@ export function detectPosFromContext(targetWord: string, sentenceText: string = 
   if (cleanTarget.endsWith('ed') || cleanTarget.endsWith('ing') || cleanTarget.endsWith('ize') || cleanTarget.endsWith('ate')) return 'v';
   if (cleanTarget.endsWith('able') || cleanTarget.endsWith('ful') || cleanTarget.endsWith('ous') || cleanTarget.endsWith('al')) return 'a';
 
-  return 'a';
+  return 'n';
 }
 
 /**

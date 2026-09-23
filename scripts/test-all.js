@@ -72,6 +72,16 @@ assert(impRes.data.categories.stronger.includes('critical'), 'Contains "critical
 assert(impRes.data.categories.simpler.includes('key'), 'Contains "key" in simpler category');
 assert(impRes.data.antonyms.includes('unimportant'), 'Contains "unimportant" in antonyms');
 
+// Word "school" test
+const schoolRes = synonymEngine.getSynonyms('school', 'He go to school every day.');
+assert(schoolRes.hasResults, 'Found synonyms for "school"');
+assert(schoolRes.data.categories.similar.some(s => s.includes('academy') || s.includes('institution') || s.includes('college')), 'Identified authentic educational synonyms for "school" (academy, institution, college)');
+
+// Word "something" test
+const somethingRes = synonymEngine.getSynonyms('something', 'create something important');
+assert(somethingRes.hasResults, 'Found synonyms for "something"');
+assert(somethingRes.data.categories.similar.some(s => s.includes('entity') || s.includes('object') || s.includes('matter')), 'Identified authentic entity synonyms for "something" (entity, object, matter)');
+
 // 4. Writing Core Manager & Lifecycle Tests
 console.log('\n--- 4. Writing Core & Personal Dictionary ---');
 const core = new WritingCoreManager();

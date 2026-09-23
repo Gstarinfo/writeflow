@@ -1,672 +1,390 @@
 import { WordEntry, POS, VocabularyLevel, SynonymCategory, SynsetRecord } from './types.js';
 
-// Comprehensive Open English WordNet Lexical Database
+/**
+ * Open English WordNet Comprehensive Lexical Database
+ * Contains rich multi-sense synsets with 4 tiers: Similar, Stronger, Simpler, Formal, and Antonyms.
+ */
 export const WORDNET_DATABASE: Record<string, WordEntry[]> = {
-  "important": [
+  // --- EDUCATION & ACADEMICS ---
+  "school": [
     {
-      lemma: "important",
-      pos: "a",
-      frequencyRank: 98,
-      synsets: [
-        {
-          id: "syn_important_1",
-          pos: "a",
-          definition: "Of great significance, consequence, or value",
-          examples: ["an important decision", "it is important to note this fact"],
-          lemmas: ["significant", "notable", "consequential", "meaningful", "momentous"],
-          antonyms: ["unimportant", "insignificant", "trivial", "minor"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_important_2",
-          pos: "a",
-          definition: "Crucially vital and having high priority",
-          examples: ["critical system component", "essential requirement"],
-          lemmas: ["critical", "essential", "crucial", "vital", "imperative", "paramount"],
-          antonyms: ["optional", "dispensable", "negligible"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_important_3",
-          pos: "a",
-          definition: "Fundamentally central or basic",
-          examples: ["the key issue is security"],
-          lemmas: ["key", "main", "major", "chief", "primary"],
-          antonyms: ["secondary", "marginal"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_important_4",
-          pos: "a",
-          definition: "Carrying formal authority, prestige, or serious implications",
-          examples: ["a consequential summit of ministers", "a substantial outcome"],
-          lemmas: ["consequential", "substantive", "momentous", "authoritative", "illustrious"],
-          antonyms: ["petty", "nominal"],
-          level: "academic",
-          category: "formal"
-        }
-      ]
-    }
-  ],
-  "light": [
-    {
-      lemma: "light",
-      pos: "a",
-      frequencyRank: 92,
-      synsets: [
-        {
-          id: "syn_light_adj_weight",
-          pos: "a",
-          definition: "Having little weight; not heavy; easily moved or lifted",
-          examples: ["the bag is light", "light luggage"],
-          lemmas: ["lightweight", "featherweight", "weightless", "portable", "slight"],
-          antonyms: ["heavy", "burdensome", "cumbersome", "ponderous"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_light_adj_illum",
-          pos: "a",
-          definition: "Characterized by brightness; well-illuminated",
-          examples: ["a light and airy room", "broad daylight"],
-          lemmas: ["bright", "luminous", "radiant", "illuminated", "clear"],
-          antonyms: ["dark", "dim", "gloomy", "shadowy"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_light_adj_effort",
-          pos: "a",
-          definition: "Requiring little effort; gentle or easy",
-          examples: ["light exercise", "light duties"],
-          lemmas: ["gentle", "mild", "effortless", "moderate"],
-          antonyms: ["strenuous", "demanding", "intense"],
-          level: "simple",
-          category: "simpler"
-        }
-      ]
-    },
-    {
-      lemma: "light",
+      lemma: "school",
       pos: "n",
-      frequencyRank: 94,
-      synsets: [
-        {
-          id: "syn_light_noun_illum",
-          pos: "n",
-          definition: "The natural agent that stimulates sight and makes things visible",
-          examples: ["turn on the light", "the light from the sun"],
-          lemmas: ["illumination", "radiance", "beam", "glow", "brightness", "lamp"],
-          antonyms: ["darkness", "shadow", "gloom"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_light_noun_clarity",
-          pos: "n",
-          definition: "Mental understanding or spiritual enlightenment",
-          examples: ["shed light on the mystery", "in light of new evidence"],
-          lemmas: ["clarity", "insight", "understanding", "perspective", "revelation"],
-          antonyms: ["confusion", "obscurity"],
-          level: "professional",
-          category: "formal"
-        }
-      ]
-    },
-    {
-      lemma: "light",
-      pos: "v",
-      frequencyRank: 78,
-      synsets: [
-        {
-          id: "syn_light_verb",
-          pos: "v",
-          definition: "To ignite or set burning, or to provide with illumination",
-          examples: ["light a candle", "torches light the way"],
-          lemmas: ["ignite", "kindle", "illuminate", "brighten", "spark"],
-          antonyms: ["extinguish", "quench", "darken"],
-          level: "natural",
-          category: "similar"
-        }
-      ]
-    }
-  ],
-  "write": [
-    {
-      lemma: "write",
-      pos: "v",
       frequencyRank: 95,
       synsets: [
         {
-          id: "syn_write_1",
-          pos: "v",
-          definition: "Mark letters, words, or symbols on a surface; compose text",
-          examples: ["write an article", "write an essay"],
-          lemmas: ["compose", "author", "draft", "pen", "record"],
-          antonyms: ["erase", "delete", "obliterate"],
+          id: "syn_school_institution",
+          pos: "n",
+          definition: "An educational institution designed for teaching students under the direction of teachers",
+          examples: ["he go to school every day", "the high school curriculum"],
+          lemmas: ["academy", "institution", "college", "seminary", "lyceum", "classroom", "educational institution"],
+          antonyms: [],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_write_2",
-          pos: "v",
-          definition: "Craft literary or professional prose with mastery",
-          examples: ["author a monograph", "formulate a proposal"],
-          lemmas: ["author", "craft", "formulate", "inscribe", "publish"],
-          antonyms: ["censor"],
+          id: "syn_school_faculty",
+          pos: "n",
+          definition: "A department or specialized division of a university devoted to a particular branch of learning",
+          examples: ["the medical school", "the school of engineering"],
+          lemmas: ["faculty", "department", "division", "academic college", "institute"],
+          antonyms: [],
           level: "professional",
-          category: "stronger"
+          category: "formal"
         },
         {
-          id: "syn_write_3",
-          pos: "v",
-          definition: "Put down words simply",
-          examples: ["jot down notes", "set down thoughts"],
-          lemmas: ["jot down", "set down", "note"],
-          antonyms: ["erase"],
+          id: "syn_school_body",
+          pos: "n",
+          definition: "The students and staff members of an educational institution collectively",
+          examples: ["the whole school attended the assembly"],
+          lemmas: ["student body", "campus", "community", "assembly"],
+          antonyms: [],
           level: "simple",
           category: "simpler"
         },
         {
-          id: "syn_write_4",
-          pos: "v",
-          definition: "Produce scholarly treatise or formal dissertation",
-          examples: ["treatise composition", "indite a formal treatise"],
-          lemmas: ["indite", "delineate", "chronicle", "transcribe"],
-          antonyms: ["expunge"],
-          level: "academic",
-          category: "formal"
+          id: "syn_school_fish",
+          pos: "n",
+          definition: "A large number of fish or sea animals swimming together",
+          examples: ["a school of dolphins", "a school of tuna"],
+          lemmas: ["shoal", "swarm", "flock", "group"],
+          antonyms: [],
+          level: "simple",
+          category: "simpler"
         }
       ]
-    }
-  ],
-  "happy": [
+    },
     {
-      lemma: "happy",
-      pos: "a",
-      frequencyRank: 93,
+      lemma: "school",
+      pos: "v",
+      frequencyRank: 62,
       synsets: [
         {
-          id: "syn_happy_1",
-          pos: "a",
-          definition: "Feeling or showing pleasure or contentment",
-          examples: ["a happy customer", "happy to help"],
-          lemmas: ["cheerful", "glad", "joyful", "content", "delighted"],
-          antonyms: ["sad", "unhappy", "sorrowful", "depressed"],
+          id: "syn_school_verb",
+          pos: "v",
+          definition: "To educate, train, or discipline in a systematic manner",
+          examples: ["school someone in the basics of writing"],
+          lemmas: ["educate", "train", "instruct", "tutor", "discipline", "coach"],
+          antonyms: ["neglect", "misguide"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "student": [
+    {
+      lemma: "student",
+      pos: "n",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_student_learner",
+          pos: "n",
+          definition: "A person who is studying at a school, college, or university",
+          examples: ["a high school student", "students in the library"],
+          lemmas: ["pupil", "learner", "scholar", "undergraduate", "apprentice", "trainee", "disciple"],
+          antonyms: ["teacher", "instructor", "professor"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_happy_2",
-          pos: "a",
-          definition: "Filled with intense, overflowing bliss or exhilaration",
-          examples: ["ecstatic reception", "exuberant celebration"],
-          lemmas: ["ecstatic", "thrilled", "elated", "jubilant", "radiant"],
-          antonyms: ["miserable", "despondent"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_happy_3",
-          pos: "a",
-          definition: "Glad and feeling fine",
-          examples: ["feeling glad", "good mood"],
-          lemmas: ["glad", "pleased", "merry"],
-          antonyms: ["sad", "down"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_happy_4",
-          pos: "a",
-          definition: "Marked by serene eudaemonia or supreme felicitous fortune",
-          examples: ["felicitous occurrence", "blissful tranquility"],
-          lemmas: ["felicitous", "beatific", "exultant", "euphoric"],
-          antonyms: ["doleful", "lamentable"],
+          id: "syn_student_scholar",
+          pos: "n",
+          definition: "An attentive observer, researcher, or dedicated scholar of a subject",
+          examples: ["a keen student of history", "a student of political affairs"],
+          lemmas: ["scholar", "researcher", "investigator", "analyst", "observer"],
+          antonyms: [],
           level: "academic",
           category: "formal"
         }
       ]
     }
   ],
-  "sad": [
+  "teacher": [
     {
-      lemma: "sad",
-      pos: "a",
+      lemma: "teacher",
+      pos: "n",
       frequencyRank: 90,
       synsets: [
         {
-          id: "syn_sad_1",
-          pos: "a",
-          definition: "Feeling or showing sorrow; unhappy",
-          examples: ["a sad story", "feeling sad"],
-          lemmas: ["unhappy", "sorrowful", "gloomy", "mournful", "downcast"],
-          antonyms: ["happy", "cheerful", "glad", "joyful"],
+          id: "syn_teacher_educator",
+          pos: "n",
+          definition: "A person who helps students acquire knowledge, competence, or virtue",
+          examples: ["a science teacher", "the teacher gave instructions"],
+          lemmas: ["instructor", "educator", "tutor", "professor", "mentor", "trainer", "pedagogue"],
+          antonyms: ["student", "pupil", "learner"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_sad_2",
-          pos: "a",
-          definition: "Deeply devastated or burdened by intense sorrow",
-          examples: ["devastated community", "heartbroken family"],
-          lemmas: ["devastated", "heartbroken", "despondent", "inconsolable", "grief-stricken"],
-          antonyms: ["elated", "ecstatic"],
+          id: "syn_teacher_mentor",
+          pos: "n",
+          definition: "An inspiring guide or recognized authority providing counsel",
+          examples: ["a beloved mentor and teacher"],
+          lemmas: ["mentor", "guide", "master", "counselor", "luminary"],
+          antonyms: [],
           level: "professional",
           category: "stronger"
-        },
-        {
-          id: "syn_sad_3",
-          pos: "a",
-          definition: "Feeling down or blue",
-          examples: ["feeling down"],
-          lemmas: ["down", "blue", "low"],
-          antonyms: ["happy", "fine"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_sad_4",
-          pos: "a",
-          definition: "Characterized by grave melancholy or elegiac pathos",
-          examples: ["melancholic prose", "lugubrious tone"],
-          lemmas: ["melancholic", "lugubrious", "doleful", "lamentable", "woeful"],
-          antonyms: ["beatific", "jubilant"],
-          level: "academic",
-          category: "formal"
         }
       ]
     }
   ],
-  "fast": [
+  "education": [
     {
-      lemma: "fast",
-      pos: "a",
-      frequencyRank: 91,
-      synsets: [
-        {
-          id: "syn_fast_1",
-          pos: "a",
-          definition: "Moving or capable of moving at high speed",
-          examples: ["a fast train", "fast response"],
-          lemmas: ["quick", "rapid", "swift", "speedy", "brisk"],
-          antonyms: ["slow", "sluggish", "gradual", "leisurely"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_fast_2",
-          pos: "a",
-          definition: "Operating with extreme or unprecedented velocity",
-          examples: ["lightning-fast turnaround", "breakneck acceleration"],
-          lemmas: ["high-speed", "fleet", "accelerated", "blistering", "prompt"],
-          antonyms: ["plodding", "tardy"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_fast_3",
-          pos: "a",
-          definition: "Accomplished without delay",
-          examples: ["quick check", "speedy fix"],
-          lemmas: ["quick", "prompt", "snappy"],
-          antonyms: ["slow"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_fast_4",
-          pos: "a",
-          definition: "Characterized by expeditious execution and swift dispatch",
-          examples: ["an expeditious review process"],
-          lemmas: ["expeditious", "instantaneous", "precipitous"],
-          antonyms: ["protracted", "delayed"],
-          level: "academic",
-          category: "formal"
-        }
-      ]
-    }
-  ],
-  "slow": [
-    {
-      lemma: "slow",
-      pos: "a",
+      lemma: "education",
+      pos: "n",
       frequencyRank: 89,
       synsets: [
         {
-          id: "syn_slow_1",
-          pos: "a",
-          definition: "Moving or operating, or designed to do so, at a low speed",
-          examples: ["a slow pace", "slow progress"],
-          lemmas: ["unhurried", "leisurely", "gradual", "sluggish", "steady"],
-          antonyms: ["fast", "quick", "rapid", "swift"],
+          id: "syn_education_instruction",
+          pos: "n",
+          definition: "The process of receiving or giving systematic instruction, especially at a school or university",
+          examples: ["primary education", "higher education"],
+          lemmas: ["schooling", "instruction", "tuition", "teaching", "pedagogy", "tutelage", "learning"],
+          antonyms: ["ignorance", "illiteracy"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_slow_2",
-          pos: "a",
-          definition: "Extremely delayed, stagnant, or impeded",
-          examples: ["stagnant growth", "laborious progress"],
-          lemmas: ["stagnant", "laborious", "plodding", "protracted", "dilatory"],
-          antonyms: ["accelerated", "fleet"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_slow_3",
-          pos: "a",
-          definition: "Taking a long time",
-          examples: ["slow walk"],
-          lemmas: ["late", "gradual", "lazy"],
-          antonyms: ["fast"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_slow_4",
-          pos: "a",
-          definition: "Characterized by deliberate torpor or prolonged inertia",
-          examples: ["torpid bureaucracy", "tardy response"],
-          lemmas: ["torpid", "lethargic", "tardy", "quiescent"],
-          antonyms: ["expeditious", "instantaneous"],
+          id: "syn_education_erudition",
+          pos: "n",
+          definition: "The knowledge and intellectual cultivation acquired through learning",
+          examples: ["a person of great education and culture"],
+          lemmas: ["enlightenment", "erudition", "scholarship", "cultivation", "intellectual development"],
+          antonyms: [],
           level: "academic",
           category: "formal"
         }
       ]
     }
   ],
-  "create": [
+  "study": [
     {
-      lemma: "create",
+      lemma: "study",
       pos: "v",
-      frequencyRank: 93,
+      frequencyRank: 88,
       synsets: [
         {
-          id: "syn_create_1",
+          id: "syn_study_verb",
           pos: "v",
-          definition: "Bring something into existence",
-          examples: ["create an application", "create a new painting"],
-          lemmas: ["produce", "generate", "build", "craft", "make", "form"],
-          antonyms: ["destroy", "demolish", "ruin", "annihilate"],
+          definition: "Devote time and attention to acquiring knowledge on an academic subject",
+          examples: ["study for an exam", "study linguistics"],
+          lemmas: ["examine", "analyze", "investigate", "scrutinize", "research", "learn", "review", "pore over"],
+          antonyms: ["neglect", "ignore", "skim"],
           level: "natural",
           category: "similar"
-        },
+        }
+      ]
+    },
+    {
+      lemma: "study",
+      pos: "n",
+      frequencyRank: 87,
+      synsets: [
         {
-          id: "syn_create_2",
-          pos: "v",
-          definition: "Invent, formulate, or inaugurate with originality",
-          examples: ["pioneer a new methodology", "forge a partnership"],
-          lemmas: ["originate", "establish", "engineer", "forge", "pioneer", "fabricate"],
-          antonyms: ["dismantle", "terminate"],
+          id: "syn_study_noun",
+          pos: "n",
+          definition: "A detailed investigation and analysis of a subject or situation",
+          examples: ["a clinical study", "publish a new study"],
+          lemmas: ["investigation", "analysis", "inquiry", "report", "treatise", "survey", "examination"],
+          antonyms: [],
           level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_create_3",
-          pos: "v",
-          definition: "Construct or put together simply",
-          examples: ["make a list", "set up a group"],
-          lemmas: ["make", "build", "set up", "start"],
-          antonyms: ["break"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_create_4",
-          pos: "v",
-          definition: "Conceive through systematic intellectual synthesis",
-          examples: ["formulate a hypothesis", "synthesize findings"],
-          lemmas: ["formulate", "synthesize", "instigate", "constitute"],
-          antonyms: ["deconstruct"],
-          level: "academic",
           category: "formal"
         }
       ]
     }
   ],
-  "improve": [
+  "learn": [
     {
-      lemma: "improve",
+      lemma: "learn",
       pos: "v",
       frequencyRank: 91,
       synsets: [
         {
-          id: "syn_improve_1",
+          id: "syn_learn_acquire",
           pos: "v",
-          definition: "Make or become better in quality or condition",
-          examples: ["improve your writing", "the weather improved"],
-          lemmas: ["enhance", "upgrade", "refine", "better", "boost"],
-          antonyms: ["worsen", "deteriorate", "impair", "degrade"],
+          definition: "Gain or acquire knowledge of or skill in something by study or practice",
+          examples: ["learn a new language", "learn from experience"],
+          lemmas: ["acquire", "master", "grasp", "absorb", "comprehend", "assimilate", "internalize"],
+          antonyms: ["forget", "unlearn"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_improve_2",
+          id: "syn_learn_discover",
           pos: "v",
-          definition: "Systematically transform to maximize efficacy or superiority",
-          examples: ["optimize system throughput", "elevate standards"],
-          lemmas: ["optimize", "elevate", "revolutionize", "amplify", "sharpen"],
-          antonyms: ["compromise", "dilute"],
+          definition: "Become aware of something by information or observation",
+          examples: ["we learned that the meeting was postponed"],
+          lemmas: ["discover", "ascertain", "gather", "glean", "find out"],
+          antonyms: [],
           level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_improve_3",
-          pos: "v",
-          definition: "Make nicer or fix up straightforwardly",
-          examples: ["fix up your room", "help things get better"],
-          lemmas: ["better", "fix up", "help", "polish"],
-          antonyms: ["harm"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_improve_4",
-          pos: "v",
-          definition: "Make a bad situation better; bring about scholarly or civic advancement",
-          examples: ["ameliorate working conditions", "augment capabilities"],
-          lemmas: ["ameliorate", "augment", "remedy", "rectify", "transcend"],
-          antonyms: ["exacerbate", "aggravate"],
-          level: "academic",
           category: "formal"
         }
       ]
     }
   ],
-  "effective": [
+
+  // --- ENTITIES, NOUNS & GENERAL CONCEPTS ---
+  "something": [
     {
-      lemma: "effective",
-      pos: "a",
-      frequencyRank: 88,
-      synsets: [
-        {
-          id: "syn_effective_1",
-          pos: "a",
-          definition: "Successful in producing a desired or intended result",
-          examples: ["an effective solution", "effective leadership"],
-          lemmas: ["successful", "efficient", "productive", "functional", "impactful"],
-          antonyms: ["ineffective", "useless", "futile", "inefficient"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_effective_2",
-          pos: "a",
-          definition: "Possessing decisive power to produce compelling results",
-          examples: ["potent countermeasure", "formidable advantage"],
-          lemmas: ["potent", "compelling", "formidable", "decisive", "imperative"],
-          antonyms: ["powerless", "feeble"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_effective_3",
-          pos: "a",
-          definition: "Working well and getting the job done",
-          examples: ["useful tool", "good method"],
-          lemmas: ["useful", "helpful", "good", "practical"],
-          antonyms: ["unhelpful"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_effective_4",
-          pos: "a",
-          definition: "Producing the desired effect with scientific or scholarly precision",
-          examples: ["an efficacious remedy", "effectual governance"],
-          lemmas: ["efficacious", "effectual", "meritorious", "authoritative"],
-          antonyms: ["inoperative", "counterproductive"],
-          level: "academic",
-          category: "formal"
-        }
-      ]
-    }
-  ],
-  "good": [
-    {
-      lemma: "good",
-      pos: "a",
-      frequencyRank: 99,
-      synsets: [
-        {
-          id: "syn_good_1",
-          pos: "a",
-          definition: "To be desired or approved of; having required qualities",
-          examples: ["a good essay", "good work"],
-          lemmas: ["fine", "solid", "positive", "decent", "favorable", "sound"],
-          antonyms: ["bad", "poor", "inferior", "unsatisfactory"],
-          level: "natural",
-          category: "similar"
-        },
-        {
-          id: "syn_good_2",
-          pos: "a",
-          definition: "Possessing outstanding merit, superiority, or distinction",
-          examples: ["an exceptional achievement", "exemplary craftsmanship"],
-          lemmas: ["excellent", "superb", "outstanding", "exceptional", "stellar", "exemplary"],
-          antonyms: ["abysmal", "terrible", "dreadful"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_good_3",
-          pos: "a",
-          definition: "Pleasing and satisfactory",
-          examples: ["nice day", "great story"],
-          lemmas: ["great", "nice", "fine"],
-          antonyms: ["bad"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_good_4",
-          pos: "a",
-          definition: "Possessing high moral, intellectual, or civic virtue",
-          examples: ["an exemplary record", "virtuous conduct"],
-          lemmas: ["commendable", "meritorious", "virtuous", "laudable"],
-          antonyms: ["reprehensible", "deficient"],
-          level: "academic",
-          category: "formal"
-        }
-      ]
-    }
-  ],
-  "bad": [
-    {
-      lemma: "bad",
-      pos: "a",
+      lemma: "something",
+      pos: "n",
       frequencyRank: 96,
       synsets: [
         {
-          id: "syn_bad_1",
-          pos: "a",
-          definition: "Of poor quality or a low standard",
-          examples: ["a bad mistake", "bad performance"],
-          lemmas: ["poor", "substandard", "faulty", "flawed", "defective"],
-          antonyms: ["good", "sound", "satisfactory"],
+          id: "syn_something_entity",
+          pos: "n",
+          definition: "An unspecified or undetermined object, matter, or entity",
+          examples: ["create something important", "there is something on the table"],
+          lemmas: ["entity", "object", "matter", "substance", "item", "article", "element"],
+          antonyms: ["nothing", "zero"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_bad_2",
-          pos: "a",
-          definition: "Extremely harmful, severe, or disastrous",
-          examples: ["a catastrophic error", "detrimental effect"],
-          lemmas: ["detrimental", "catastrophic", "severe", "adverse", "deleterious"],
-          antonyms: ["beneficial", "advantageous"],
+          id: "syn_something_notable",
+          pos: "n",
+          definition: "An entity or individual of notable importance or consequence",
+          examples: ["he really made something of himself", "that breakthrough is really something"],
+          lemmas: ["notable achievement", "remarkable entity", "distinguished thing", "marvel"],
+          antonyms: ["trifle", "nonentity"],
           level: "professional",
           category: "stronger"
         },
         {
-          id: "syn_bad_3",
-          pos: "a",
-          definition: "Not good or not right",
-          examples: ["poor choice"],
-          lemmas: ["poor", "wrong", "awful"],
-          antonyms: ["good", "right"],
+          id: "syn_something_portion",
+          pos: "n",
+          definition: "A certain part, portion, or quantity",
+          examples: ["give me something to eat", "a little something"],
+          lemmas: ["part", "portion", "fraction", "bit", "piece"],
+          antonyms: [],
           level: "simple",
           category: "simpler"
+        }
+      ]
+    }
+  ],
+  "bag": [
+    {
+      lemma: "bag",
+      pos: "n",
+      frequencyRank: 84,
+      synsets: [
+        {
+          id: "syn_bag_container",
+          pos: "n",
+          definition: "A flexible container with an opening at the top, used for carrying things",
+          examples: ["the bag is light", "carry a shopping bag"],
+          lemmas: ["sack", "pouch", "pack", "backpack", "satchel", "tote", "handbag", "receptacle"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
         },
         {
-          id: "syn_bad_4",
-          pos: "a",
-          definition: "Morally or intellectually deficient or deleterious",
-          examples: ["pernicious consequences", "nefarious conduct"],
-          lemmas: ["pernicious", "deplorable", "egregious", "inimical"],
-          antonyms: ["virtuous", "exemplary"],
-          level: "academic",
+          id: "syn_bag_luggage",
+          pos: "n",
+          definition: "Luggage or travel baggage used to carry personal belongings",
+          examples: ["pack your bags for the trip"],
+          lemmas: ["luggage", "baggage", "suitcase", "valise", "trunk"],
+          antonyms: [],
+          level: "professional",
           category: "formal"
         }
       ]
     }
   ],
-  "smart": [
+  "room": [
     {
-      lemma: "smart",
-      pos: "a",
-      frequencyRank: 87,
+      lemma: "room",
+      pos: "n",
+      frequencyRank: 91,
       synsets: [
         {
-          id: "syn_smart_1",
-          pos: "a",
-          definition: "Having or showing a quick-witted intelligence",
-          examples: ["a smart student", "smart strategy"],
-          lemmas: ["intelligent", "clever", "bright", "sharp", "astute"],
-          antonyms: ["foolish", "stupid", "ignorant", "unwise"],
+          id: "syn_room_chamber",
+          pos: "n",
+          definition: "A partitioned area inside a building with walls, floor, and ceiling",
+          examples: ["turn on the light in the room", "a hotel room"],
+          lemmas: ["chamber", "space", "quarters", "compartment", "office", "hall", "suite", "enclosure"],
+          antonyms: [],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_smart_2",
-          pos: "a",
-          definition: "Displaying profound intellectual capability and strategic acumen",
-          examples: ["brilliant innovation", "shrewd negotiator"],
-          lemmas: ["brilliant", "shrewd", "ingenious", "perspicacious", "sagacious"],
-          antonyms: ["obtuse", "inept"],
+          id: "syn_room_scope",
+          pos: "n",
+          definition: "Space or opportunity for something to happen or be accommodated",
+          examples: ["room for improvement", "room for growth"],
+          lemmas: ["scope", "latitude", "leeway", "margin", "capacity", "opportunity"],
+          antonyms: ["restriction", "limitation"],
           level: "professional",
-          category: "stronger"
+          category: "formal"
+        }
+      ]
+    }
+  ],
+  "method": [
+    {
+      lemma: "method",
+      pos: "n",
+      frequencyRank: 88,
+      synsets: [
+        {
+          id: "syn_method_technique",
+          pos: "n",
+          definition: "A particular procedure for accomplishing or approaching something",
+          examples: ["the new method is more effective", "scientific method"],
+          lemmas: ["technique", "approach", "procedure", "strategy", "process", "mechanism", "system", "practice"],
+          antonyms: ["disorder", "chaos"],
+          level: "natural",
+          category: "similar"
         },
         {
-          id: "syn_smart_3",
-          pos: "a",
-          definition: "Quick thinking and capable",
-          examples: ["clever idea", "sharp boy"],
-          lemmas: ["clever", "sharp", "wise"],
-          antonyms: ["slow"],
+          id: "syn_method_methodology",
+          pos: "n",
+          definition: "A structured, formalized framework or system of principles",
+          examples: ["the proposed methodology for data collection"],
+          lemmas: ["methodology", "protocol", "regimen", "systematization", "algorithm"],
+          antonyms: [],
+          level: "academic",
+          category: "formal"
+        },
+        {
+          id: "syn_method_way",
+          pos: "n",
+          definition: "A simple or direct way of doing things",
+          examples: ["an easy method to learn"],
+          lemmas: ["way", "means", "mode", "manner"],
+          antonyms: [],
           level: "simple",
           category: "simpler"
+        }
+      ]
+    }
+  ],
+  "system": [
+    {
+      lemma: "system",
+      pos: "n",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_system_framework",
+          pos: "n",
+          definition: "A set of connected things or parts forming an organized complex whole",
+          examples: ["operating system", "a system of checks and balances"],
+          lemmas: ["framework", "network", "structure", "mechanism", "organization", "scheme", "setup"],
+          antonyms: ["chaos", "disorganization"],
+          level: "natural",
+          category: "similar"
         },
         {
-          id: "syn_smart_4",
-          pos: "a",
-          definition: "Marked by scholarly depth and intellectual rigor",
-          examples: ["erudite scholar", "sagacious analysis"],
-          lemmas: ["erudite", "intellectual", "judicious", "insightful"],
-          antonyms: ["superficial"],
+          id: "syn_system_infrastructure",
+          pos: "n",
+          definition: "Comprehensive underlying infrastructure or architectural paradigm",
+          examples: ["the enterprise software system"],
+          lemmas: ["infrastructure", "ecosystem", "architecture", "paradigm", "apparatus"],
+          antonyms: [],
           level: "academic",
           category: "formal"
         }
@@ -680,44 +398,34 @@ export const WORDNET_DATABASE: Record<string, WordEntry[]> = {
       frequencyRank: 94,
       synsets: [
         {
-          id: "syn_prob_1",
+          id: "syn_problem_issue",
           pos: "n",
-          definition: "A matter or situation regarded as unwelcome or harmful",
-          examples: ["solve the problem", "technical problems"],
-          lemmas: ["issue", "difficulty", "trouble", "challenge", "obstacle"],
-          antonyms: ["solution", "advantage", "benefit"],
+          definition: "A matter or situation regarded as unwelcome, harmful, or difficult to deal with",
+          examples: ["solve a difficult problem", "economic problems"],
+          lemmas: ["issue", "difficulty", "challenge", "obstacle", "dilemma", "complication", "trouble", "impediment"],
+          antonyms: ["solution", "answer", "resolution"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_prob_2",
+          id: "syn_problem_crisis",
           pos: "n",
-          definition: "A grave or critical impasse threatening operations",
-          examples: ["crisis management", "critical dilemma"],
-          lemmas: ["crisis", "dilemma", "predicament", "hazard", "bottleneck"],
-          antonyms: ["resolution", "panacea"],
+          definition: "An acute, severe, or high-stakes predicament",
+          examples: ["a critical security problem"],
+          lemmas: ["crisis", "predicament", "quandary", "conundrum", "adversity"],
+          antonyms: ["panacea", "benefit"],
           level: "professional",
           category: "stronger"
         },
         {
-          id: "syn_prob_3",
+          id: "syn_problem_snag",
           pos: "n",
-          definition: "Something hard to fix or deal with",
-          examples: ["hitch in the plan"],
-          lemmas: ["snag", "hitch", "trouble", "setback"],
-          antonyms: ["fix"],
+          definition: "A minor difficulty or hitch",
+          examples: ["a small problem in the code"],
+          lemmas: ["snag", "hitch", "glitch", "bug", "flaw"],
+          antonyms: [],
           level: "simple",
           category: "simpler"
-        },
-        {
-          id: "syn_prob_4",
-          pos: "n",
-          definition: "A theoretical or practical conundrum demanding academic investigation",
-          examples: ["an intricate conundrum", "methodological quagmire"],
-          lemmas: ["conundrum", "quagmire", "impediment", "adversity"],
-          antonyms: ["clarity", "equilibrium"],
-          level: "academic",
-          category: "formal"
         }
       ]
     }
@@ -726,145 +434,878 @@ export const WORDNET_DATABASE: Record<string, WordEntry[]> = {
     {
       lemma: "solution",
       pos: "n",
-      frequencyRank: 92,
+      frequencyRank: 89,
       synsets: [
         {
-          id: "syn_sol_1",
+          id: "syn_solution_answer",
           pos: "n",
           definition: "A means of solving a problem or dealing with a difficult situation",
-          examples: ["find a solution", "software solution"],
-          lemmas: ["answer", "resolution", "fix", "remedy", "key"],
-          antonyms: ["problem", "complication", "dilemma"],
+          examples: ["find a viable solution", "the solution to the puzzle"],
+          lemmas: ["answer", "remedy", "resolution", "fix", "cure", "countermeasure", "treatment"],
+          antonyms: ["problem", "obstacle", "dilemma"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_sol_2",
+          id: "syn_solution_breakthrough",
           pos: "n",
-          definition: "A comprehensive or decisive formula that resolves all difficulties",
-          examples: ["definitive remedy", "strategic resolution"],
-          lemmas: ["resolution", "breakthrough", "masterstroke", "countermeasure"],
-          antonyms: ["worsening"],
+          definition: "A decisive innovation or definitive remedy resolving an intricate issue",
+          examples: ["a breakthrough solution in medicine"],
+          lemmas: ["breakthrough", "panacea", "masterstroke", "definitive answer"],
+          antonyms: [],
           level: "professional",
           category: "stronger"
-        },
-        {
-          id: "syn_sol_3",
-          pos: "n",
-          definition: "A quick or straightforward way to fix something",
-          examples: ["easy fix", "simple answer"],
-          lemmas: ["fix", "way out", "answer"],
-          antonyms: ["trouble"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_sol_4",
-          pos: "n",
-          definition: "A scientifically verified resolution or theoretical synthesis",
-          examples: ["an efficacious panacea", "redress of grievances"],
-          lemmas: ["panacea", "redress", "rectification", "denouement"],
-          antonyms: ["stalemate"],
-          level: "academic",
-          category: "formal"
         }
       ]
     }
   ],
-  "clear": [
+  "idea": [
     {
-      lemma: "clear",
-      pos: "a",
+      lemma: "idea",
+      pos: "n",
       frequencyRank: 92,
       synsets: [
         {
-          id: "syn_clear_1",
-          pos: "a",
-          definition: "Easy to perceive, understand, or interpret",
-          examples: ["a clear explanation", "crystal clear instructions"],
-          lemmas: ["lucid", "distinct", "plain", "evident", "apparent"],
-          antonyms: ["unclear", "vague", "ambiguous", "obscure", "muddy"],
+          id: "syn_idea_concept",
+          pos: "n",
+          definition: "A thought or suggestion as to a possible course of action or understanding",
+          examples: ["a great business idea", "the central idea of the book"],
+          lemmas: ["concept", "notion", "thought", "insight", "hypothesis", "theory", "conception", "plan"],
+          antonyms: ["fact", "reality"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_clear_2",
-          pos: "a",
-          definition: "Leaving no doubt or ambiguity whatsoever",
-          examples: ["unambiguous statement", "unequivocal answer"],
-          lemmas: ["unambiguous", "unequivocal", "explicit", "transparent", "definitive"],
-          antonyms: ["dubious", "murky"],
+          id: "syn_idea_inspiration",
+          pos: "n",
+          definition: "A brilliant flash of creative insight or guiding vision",
+          examples: ["a stroke of genius and idea"],
+          lemmas: ["inspiration", "revelation", "brainwave", "vision", "epiphany"],
+          antonyms: [],
           level: "professional",
           category: "stronger"
-        },
-        {
-          id: "syn_clear_3",
-          pos: "a",
-          definition: "Simple and straightforward to see or read",
-          examples: ["plain words", "easy to see"],
-          lemmas: ["plain", "simple", "direct"],
-          antonyms: ["confusing"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_clear_4",
-          pos: "a",
-          definition: "Characterized by intellectual clarity and precise eloquence",
-          examples: ["perspicuous prose", "pellucid argumentation"],
-          lemmas: ["perspicuous", "pellucid", "unmistakable", "manifest"],
-          antonyms: ["nebulous", "opaque"],
-          level: "academic",
-          category: "formal"
         }
       ]
     }
   ],
-  "difficult": [
+  "work": [
     {
-      lemma: "difficult",
-      pos: "a",
+      lemma: "work",
+      pos: "n",
+      frequencyRank: 96,
+      synsets: [
+        {
+          id: "syn_work_job",
+          pos: "n",
+          definition: "Activity involving mental or physical effort done to achieve a purpose or employment",
+          examples: ["go to work", "hard work pays off"],
+          lemmas: ["job", "task", "labor", "occupation", "employment", "duty", "endeavor", "effort", "assignment"],
+          antonyms: ["leisure", "idleness", "rest"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_work_creation",
+          pos: "n",
+          definition: "A work of art, literature, music, or scholarship produced by an author",
+          examples: ["the complete works of Shakespeare"],
+          lemmas: ["creation", "composition", "masterpiece", "opus", "production", "treatise"],
+          antonyms: [],
+          level: "academic",
+          category: "formal"
+        }
+      ]
+    },
+    {
+      lemma: "work",
+      pos: "v",
+      frequencyRank: 95,
+      synsets: [
+        {
+          id: "syn_work_verb_perform",
+          pos: "v",
+          definition: "Be engaged in physical or mental activity; operate correctly",
+          examples: ["work on a project", "the engine works smoothly"],
+          lemmas: ["labor", "toil", "operate", "function", "perform", "strive", "serve", "execute"],
+          antonyms: ["fail", "malfunction", "idle"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "house": [
+    {
+      lemma: "house",
+      pos: "n",
+      frequencyRank: 89,
+      synsets: [
+        {
+          id: "syn_house_home",
+          pos: "n",
+          definition: "A building for human habitation, especially one lived in by a family",
+          examples: ["a two-story house", "live in a suburban house"],
+          lemmas: ["home", "residence", "dwelling", "abode", "domicile", "quarters", "habitation", "building"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "city": [
+    {
+      lemma: "city",
+      pos: "n",
+      frequencyRank: 90,
+      synsets: [
+        {
+          id: "syn_city_metropolis",
+          pos: "n",
+          definition: "A large town and human settlement of notable size, population, or importance",
+          examples: ["live in a big city", "the capital city"],
+          lemmas: ["metropolis", "municipality", "urban center", "town", "megalopolis", "capital", "settlement"],
+          antonyms: ["countryside", "village"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "car": [
+    {
+      lemma: "car",
+      pos: "n",
       frequencyRank: 88,
       synsets: [
         {
-          id: "syn_diff_1",
-          pos: "a",
-          definition: "Needing much effort or skill to accomplish or deal with",
-          examples: ["a difficult problem", "difficult circumstances"],
-          lemmas: ["hard", "challenging", "tough", "demanding", "tricky"],
-          antonyms: ["easy", "simple", "effortless", "straightforward"],
+          id: "syn_car_vehicle",
+          pos: "n",
+          definition: "A four-wheeled road vehicle powered by an engine and able to carry passengers",
+          examples: ["drive a car", "park the car"],
+          lemmas: ["automobile", "vehicle", "motorcar", "auto", "sedan", "coupe", "conveyance"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "money": [
+    {
+      lemma: "money",
+      pos: "n",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_money_currency",
+          pos: "n",
+          definition: "A current medium of exchange in the form of coins and banknotes",
+          examples: ["earn money", "save money for the future"],
+          lemmas: ["currency", "funds", "capital", "cash", "finances", "wealth", "resources", "revenue", "assets"],
+          antonyms: ["debt", "poverty"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "book": [
+    {
+      lemma: "book",
+      pos: "n",
+      frequencyRank: 90,
+      synsets: [
+        {
+          id: "syn_book_volume",
+          pos: "n",
+          definition: "A written or printed work consisting of pages bound together",
+          examples: ["read a book", "publish a textbook"],
+          lemmas: ["volume", "publication", "tome", "text", "manuscript", "manual", "handbook", "treatise"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "computer": [
+    {
+      lemma: "computer",
+      pos: "n",
+      frequencyRank: 91,
+      synsets: [
+        {
+          id: "syn_computer_machine",
+          pos: "n",
+          definition: "An electronic device for storing and processing data according to variable programs",
+          examples: ["work on a computer", "a personal computer"],
+          lemmas: ["processor", "workstation", "terminal", "system", "device", "laptop", "mainframe", "pc"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "friend": [
+    {
+      lemma: "friend",
+      pos: "n",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_friend_companion",
+          pos: "n",
+          definition: "A person with whom one has a bond of mutual affection and trust",
+          examples: ["a close friend", "make new friends"],
+          lemmas: ["companion", "ally", "partner", "associate", "confidant", "comrade", "peer", "buddy"],
+          antonyms: ["enemy", "foe", "rival", "opponent"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "family": [
+    {
+      lemma: "family",
+      pos: "n",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_family_household",
+          pos: "n",
+          definition: "A group of people affiliated by consanguinity, affinity, or co-residence",
+          examples: ["spend time with family", "a supportive family"],
+          lemmas: ["household", "relatives", "kin", "lineage", "clan", "kinship", "ancestry", "tribe"],
+          antonyms: ["strangers"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "water": [
+    {
+      lemma: "water",
+      pos: "n",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_water_liquid",
+          pos: "n",
+          definition: "The transparent liquid that forms rain, rivers, and oceans, essential for life",
+          examples: ["drink a glass of water", "pure water"],
+          lemmas: ["liquid", "fluid", "aqua", "moisture", "h2o", "beverage"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "food": [
+    {
+      lemma: "food",
+      pos: "n",
+      frequencyRank: 91,
+      synsets: [
+        {
+          id: "syn_food_nourishment",
+          pos: "n",
+          definition: "Any nutritious substance consumed by living beings to maintain life and growth",
+          examples: ["healthy food", "prepare delicious food"],
+          lemmas: ["nourishment", "sustenance", "fare", "cuisine", "diet", "meal", "edibles", "provisions"],
+          antonyms: ["poison", "toxin"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "world": [
+    {
+      lemma: "world",
+      pos: "n",
+      frequencyRank: 95,
+      synsets: [
+        {
+          id: "syn_world_earth",
+          pos: "n",
+          definition: "The earth, together with all of its countries, peoples, and natural environments",
+          examples: ["travel the world", "a global world"],
+          lemmas: ["earth", "globe", "planet", "cosmos", "universe", "sphere", "realm", "domain"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      lemma: "life",
+      pos: "n",
+      frequencyRank: 96,
+      synsets: [
+        {
+          id: "syn_life_existence",
+          pos: "n",
+          definition: "The existence of an individual human being or organism and their experiences",
+          examples: ["life is a journey", "improve our daily life"],
+          lemmas: ["existence", "being", "living", "vitality", "lifetime", "lifespan", "biography"],
+          antonyms: ["death", "extinction", "nonexistence"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "time": [
+    {
+      lemma: "time",
+      pos: "n",
+      frequencyRank: 98,
+      synsets: [
+        {
+          id: "syn_time_period",
+          pos: "n",
+          definition: "The continuous progression of existence and events occurring in succession",
+          examples: ["it takes time to learn", "at the same time"],
+          lemmas: ["period", "duration", "interval", "season", "era", "epoch", "moment", "span", "juncture"],
+          antonyms: ["eternity"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "day": [
+    {
+      lemma: "day",
+      pos: "n",
+      frequencyRank: 96,
+      synsets: [
+        {
+          id: "syn_day_period",
+          pos: "n",
+          definition: "A period of twenty-four hours, or the daylight hours from sunrise to sunset",
+          examples: ["every single day", "a sunny day"],
+          lemmas: ["daytime", "daylight", "date", "twenty-four hours", "working day"],
+          antonyms: ["night", "darkness"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "night": [
+    {
+      lemma: "night",
+      pos: "n",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_night_darkness",
+          pos: "n",
+          definition: "The period of darkness between sunset and sunrise",
+          examples: ["a peaceful night", "study late at night"],
+          lemmas: ["evening", "nighttime", "darkness", "dusk", "twilight", "midnight"],
+          antonyms: ["day", "daytime", "daylight"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "person": [
+    {
+      lemma: "person",
+      pos: "n",
+      frequencyRank: 95,
+      synsets: [
+        {
+          id: "syn_person_individual",
+          pos: "n",
+          definition: "A human being regarded as an individual",
+          examples: ["an educated person", "every person matters"],
+          lemmas: ["individual", "human", "being", "citizen", "soul", "figure", "mortal"],
+          antonyms: ["object", "thing"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "people": [
+    {
+      lemma: "people",
+      pos: "n",
+      frequencyRank: 97,
+      synsets: [
+        {
+          id: "syn_people_group",
+          pos: "n",
+          definition: "Human beings in general or considered collectively as members of a community",
+          examples: ["people from all walks of life", "inspire people"],
+          lemmas: ["humans", "individuals", "citizens", "populace", "community", "public", "society", "folk"],
+          antonyms: [],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+
+  // --- ACTIONS & VERBS ---
+  "write": [
+    {
+      lemma: "write",
+      pos: "v",
+      frequencyRank: 95,
+      synsets: [
+        {
+          id: "syn_write_compose",
+          pos: "v",
+          definition: "Compose text or mark letters and symbols on a surface",
+          examples: ["write an essay", "write code"],
+          lemmas: ["compose", "author", "draft", "pen", "record", "inscribe", "formulate"],
+          antonyms: ["erase", "delete", "obliterate"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_diff_2",
-          pos: "a",
-          definition: "Requiring extraordinary physical or mental fortitude",
-          examples: ["arduous trek", "formidable obstacle"],
-          lemmas: ["arduous", "formidable", "strenuous", "onerous", "rigorous"],
-          antonyms: ["trivial", "painless"],
+          id: "syn_write_publish",
+          pos: "v",
+          definition: "Produce a formal publication, manuscript, or documented work",
+          examples: ["write a seminal treatise on economics"],
+          lemmas: ["publish", "chronicle", "document", "codify", "promulgate"],
+          antonyms: [],
+          level: "academic",
+          category: "formal"
+        }
+      ]
+    }
+  ],
+  "read": [
+    {
+      lemma: "read",
+      pos: "v",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_read_peruse",
+          pos: "v",
+          definition: "Look at and comprehend the meaning of written or printed characters",
+          examples: ["read a book", "read the instructions"],
+          lemmas: ["peruse", "scan", "examine", "study", "interpret", "review", "decipher"],
+          antonyms: ["ignore", "overlook"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "create": [
+    {
+      lemma: "create",
+      pos: "v",
+      frequencyRank: 94,
+      synsets: [
+        {
+          id: "syn_create_produce",
+          pos: "v",
+          definition: "Bring something into existence; make or generate something new",
+          examples: ["create something important", "create a new design"],
+          lemmas: ["generate", "produce", "build", "craft", "form", "construct", "originate", "fashion"],
+          antonyms: ["destroy", "demolish", "ruin", "eliminate"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_create_innovate",
+          pos: "v",
+          definition: "Design or inaugurate a breakthrough concept or system",
+          examples: ["create a revolutionary platform"],
+          lemmas: ["innovate", "establish", "engineer", "pioneer", "inaugurate", "forge"],
+          antonyms: ["dismantle", "annihilate"],
           level: "professional",
           category: "stronger"
         },
         {
-          id: "syn_diff_3",
+          id: "syn_create_make",
+          pos: "v",
+          definition: "Make or put together",
+          examples: ["create a list"],
+          lemmas: ["make", "build", "set up"],
+          antonyms: [],
+          level: "simple",
+          category: "simpler"
+        }
+      ]
+    }
+  ],
+  "improve": [
+    {
+      lemma: "improve",
+      pos: "v",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_improve_enhance",
+          pos: "v",
+          definition: "Make or become better; enhance the quality, value, or state of something",
+          examples: ["improve our writing", "improve performance"],
+          lemmas: ["enhance", "upgrade", "refine", "elevate", "boost", "strengthen", "advance", "polish"],
+          antonyms: ["worsen", "deteriorate", "impair", "degrade"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_improve_ameliorate",
+          pos: "v",
+          definition: "Significantly elevate standard or remediate structural weaknesses",
+          examples: ["ameliorate living conditions", "optimize system efficiency"],
+          lemmas: ["optimize", "ameliorate", "transform", "maximize", "streamline"],
+          antonyms: ["compound", "aggravate"],
+          level: "academic",
+          category: "formal"
+        },
+        {
+          id: "syn_improve_better",
+          pos: "v",
+          definition: "Make better or fix up",
+          examples: ["improve your score"],
+          lemmas: ["better", "help", "fix", "clean up"],
+          antonyms: [],
+          level: "simple",
+          category: "simpler"
+        }
+      ]
+    }
+  ],
+  "change": [
+    {
+      lemma: "change",
+      pos: "v",
+      frequencyRank: 94,
+      synsets: [
+        {
+          id: "syn_change_alter",
+          pos: "v",
+          definition: "Make or become different; modify the nature, form, or state",
+          examples: ["change your approach", "change the text"],
+          lemmas: ["alter", "modify", "transform", "shift", "convert", "adapt", "adjust", "evolve"],
+          antonyms: ["preserve", "maintain", "retain", "continue"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    },
+    {
+      lemma: "change",
+      pos: "n",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_change_noun",
+          pos: "n",
+          definition: "The act or instance of becoming different or undergoing transformation",
+          examples: ["a major change in policy", "embrace change"],
+          lemmas: ["transformation", "modification", "alteration", "shift", "transition", "evolution", "mutation"],
+          antonyms: ["stability", "stagnation", "permanence"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "help": [
+    {
+      lemma: "help",
+      pos: "v",
+      frequencyRank: 94,
+      synsets: [
+        {
+          id: "syn_help_assist",
+          pos: "v",
+          definition: "Make it easier for someone to do something by providing assistance",
+          examples: ["help users write better", "help a friend"],
+          lemmas: ["assist", "support", "aid", "facilitate", "serve", "guide", "back", "succor"],
+          antonyms: ["hinder", "obstruct", "impede", "thwart"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "provide": [
+    {
+      lemma: "provide",
+      pos: "v",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_provide_supply",
+          pos: "v",
+          definition: "Make available for use; supply or furnish something needed",
+          examples: ["provide writing suggestions", "provide information"],
+          lemmas: ["supply", "furnish", "offer", "deliver", "yield", "present", "grant", "afford"],
+          antonyms: ["withhold", "deny", "deprive"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "think": [
+    {
+      lemma: "think",
+      pos: "v",
+      frequencyRank: 96,
+      synsets: [
+        {
+          id: "syn_think_ponder",
+          pos: "v",
+          definition: "Have a particular opinion, belief, or idea; reflect mentally",
+          examples: ["think through a plan", "I think this is right"],
+          lemmas: ["ponder", "reflect", "consider", "reason", "deliberate", "contemplate", "meditate", "believe"],
+          antonyms: ["disregard", "ignore"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "believe": [
+    {
+      lemma: "believe",
+      pos: "v",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_believe_trust",
+          pos: "v",
+          definition: "Accept something as true; feel sure of the truth of something",
+          examples: ["believe in our mission", "we believe this is important"],
+          lemmas: ["trust", "accept", "credit", "hold", "maintain", "affirm", "presume"],
+          antonyms: ["doubt", "distrust", "disbelieve", "reject"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "know": [
+    {
+      lemma: "know",
+      pos: "v",
+      frequencyRank: 97,
+      synsets: [
+        {
+          id: "syn_know_comprehend",
+          pos: "v",
+          definition: "Be aware of through observation, inquiry, or information; have developed understanding",
+          examples: ["know the facts", "know how to write clearly"],
+          lemmas: ["comprehend", "understand", "recognize", "perceive", "grasp", "fathom", "discern"],
+          antonyms: ["ignore", "misunderstand"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "understand": [
+    {
+      lemma: "understand",
+      pos: "v",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_understand_grasp",
+          pos: "v",
+          definition: "Perceive the intended meaning of words, a language, or a person",
+          examples: ["understand the grammar rules", "understand the context"],
+          lemmas: ["comprehend", "grasp", "fathom", "apprehend", "discern", "perceive", "internalize"],
+          antonyms: ["misunderstand", "misinterpret", "confuse"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+
+  // --- QUALITIES & ADJECTIVES ---
+  "important": [
+    {
+      lemma: "important",
+      pos: "a",
+      frequencyRank: 98,
+      synsets: [
+        {
+          id: "syn_important_significant",
           pos: "a",
-          definition: "Hard to do or understand",
-          examples: ["hard question", "tough test"],
-          lemmas: ["hard", "tough"],
-          antonyms: ["easy", "simple"],
+          definition: "Of great significance, consequence, or value",
+          examples: ["create something important", "an important decision"],
+          lemmas: ["significant", "notable", "consequential", "meaningful", "momentous", "substantial"],
+          antonyms: ["unimportant", "insignificant", "trivial", "minor", "negligible"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_important_critical",
+          pos: "a",
+          definition: "Crucially vital and having high priority",
+          examples: ["a critical milestone", "essential component"],
+          lemmas: ["critical", "essential", "crucial", "vital", "imperative", "paramount", "pivotal"],
+          antonyms: ["optional", "dispensable", "secondary"],
+          level: "professional",
+          category: "stronger"
+        },
+        {
+          id: "syn_important_key",
+          pos: "a",
+          definition: "Fundamentally central, basic, or prime",
+          examples: ["the key issue is clarity"],
+          lemmas: ["key", "main", "major", "chief", "primary", "prime"],
+          antonyms: ["marginal", "petty"],
           level: "simple",
           category: "simpler"
         },
         {
-          id: "syn_diff_4",
+          id: "syn_important_formal",
           pos: "a",
-          definition: "Characterized by extreme complexity or burdensome obligations",
-          examples: ["an intractable dispute", "onerous responsibilities"],
-          lemmas: ["onerous", "intractable", "herculean", "laborious"],
-          antonyms: ["facile", "elementary"],
+          definition: "Carrying formal authority, prestige, or serious implications",
+          examples: ["a momentous summit", "substantive progress"],
+          lemmas: ["substantive", "momentous", "authoritative", "illustrious", "weighty"],
+          antonyms: ["frivolous"],
           level: "academic",
           category: "formal"
+        }
+      ]
+    }
+  ],
+  "effective": [
+    {
+      lemma: "effective",
+      pos: "a",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_effective_productive",
+          pos: "a",
+          definition: "Successful in producing a desired or intended result",
+          examples: ["the new method is very effective", "an effective solution"],
+          lemmas: ["productive", "efficacious", "impactful", "successful", "potent", "useful", "competent"],
+          antonyms: ["ineffective", "useless", "futile", "unproductive", "incompetent"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_effective_powerful",
+          pos: "a",
+          definition: "Extremely potent or driving transformative outcomes",
+          examples: ["a powerful and compelling strategy"],
+          lemmas: ["formidable", "compelling", "commanding", "unrivaled", "decisive"],
+          antonyms: ["weak", "feeble"],
+          level: "professional",
+          category: "stronger"
+        },
+        {
+          id: "syn_effective_good",
+          pos: "a",
+          definition: "Working well and easy to use",
+          examples: ["a good tool"],
+          lemmas: ["good", "helpful", "handy", "solid"],
+          antonyms: ["bad"],
+          level: "simple",
+          category: "simpler"
+        }
+      ]
+    }
+  ],
+  "light": [
+    {
+      lemma: "light",
+      pos: "a",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_light_weight",
+          pos: "a",
+          definition: "Having little weight; not heavy; easily carried or moved",
+          examples: ["the bag is light", "light packaging"],
+          lemmas: ["lightweight", "featherweight", "weightless", "portable", "slight", "compact"],
+          antonyms: ["heavy", "burdensome", "cumbersome", "ponderous", "weighty"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_light_bright",
+          pos: "a",
+          definition: "Characterized by brightness; well-illuminated and radiant",
+          examples: ["a light and airy room", "broad daylight"],
+          lemmas: ["bright", "luminous", "radiant", "illuminated", "clear", "shining", "sunny"],
+          antonyms: ["dark", "dim", "gloomy", "shadowy", "obscure"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_light_gentle",
+          pos: "a",
+          definition: "Requiring little effort; gentle or easy",
+          examples: ["light exercise", "light reading"],
+          lemmas: ["gentle", "mild", "effortless", "moderate", "easy"],
+          antonyms: ["strenuous", "demanding", "intense"],
+          level: "simple",
+          category: "simpler"
+        }
+      ]
+    },
+    {
+      lemma: "light",
+      pos: "n",
+      frequencyRank: 94,
+      synsets: [
+        {
+          id: "syn_light_illumination",
+          pos: "n",
+          definition: "The natural agent that stimulates sight and makes things visible",
+          examples: ["turn on the light in the room", "sunlight"],
+          lemmas: ["illumination", "radiance", "beam", "glow", "brightness", "lamp", "luster"],
+          antonyms: ["darkness", "shadow", "gloom"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "fast": [
+    {
+      lemma: "fast",
+      pos: "a",
+      frequencyRank: 91,
+      synsets: [
+        {
+          id: "syn_fast_rapid",
+          pos: "a",
+          definition: "Moving or capable of moving at high speed; taking only a short time",
+          examples: ["fast performance", "a fast runner"],
+          lemmas: ["quick", "rapid", "swift", "speedy", "brisk", "prompt", "expeditious", "instant"],
+          antonyms: ["slow", "sluggish", "gradual", "leisurely"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_fast_blazing",
+          pos: "a",
+          definition: "Operating with extraordinary velocity and urgency",
+          examples: ["blazing speed", "accelerated execution"],
+          lemmas: ["blazing", "breakneck", "lightning", "accelerated", "hyper-fast"],
+          antonyms: [],
+          level: "professional",
+          category: "stronger"
         }
       ]
     }
@@ -876,44 +1317,198 @@ export const WORDNET_DATABASE: Record<string, WordEntry[]> = {
       frequencyRank: 92,
       synsets: [
         {
-          id: "syn_easy_1",
+          id: "syn_easy_simple",
           pos: "a",
           definition: "Achieved without great effort; presenting few difficulties",
-          examples: ["an easy task", "easy to learn"],
-          lemmas: ["simple", "effortless", "straightforward", "uncomplicated", "manageable"],
-          antonyms: ["difficult", "hard", "complicated", "arduous"],
+          examples: ["an easy method to learn", "easy to use"],
+          lemmas: ["simple", "effortless", "straightforward", "uncomplicated", "accessible", "painless", "smooth"],
+          antonyms: ["hard", "difficult", "challenging", "arduous", "complex"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_easy_2",
+          id: "syn_easy_intuitive",
           pos: "a",
-          definition: "Flawlessly seamless and completely intuitive",
-          examples: ["seamless integration", "frictionless flow"],
-          lemmas: ["frictionless", "seamless", "elementary", "accessible"],
-          antonyms: ["strenuous"],
+          definition: "Designed with friction-free clarity and natural ergonomics",
+          examples: ["an intuitive user interface"],
+          lemmas: ["intuitive", "seamless", "frictionless", "facile", "user-friendly"],
+          antonyms: ["cumbersome"],
+          level: "professional",
+          category: "formal"
+        }
+      ]
+    }
+  ],
+  "hard": [
+    {
+      lemma: "hard",
+      pos: "a",
+      frequencyRank: 93,
+      synsets: [
+        {
+          id: "syn_hard_difficult",
+          pos: "a",
+          definition: "Done with a great deal of force or effort; difficult to accomplish",
+          examples: ["a hard problem to solve", "hard work"],
+          lemmas: ["difficult", "challenging", "demanding", "arduous", "tough", "onerous", "intricate", "formidable"],
+          antonyms: ["easy", "simple", "effortless", "painless"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_hard_solid",
+          pos: "a",
+          definition: "Solid, firm, and resistant to pressure; not easily broken",
+          examples: ["hard surface", "hard rock"],
+          lemmas: ["solid", "firm", "rigid", "stiff", "sturdy", "tough", "unyielding"],
+          antonyms: ["soft", "flexible", "yielding"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "clear": [
+    {
+      lemma: "clear",
+      pos: "a",
+      frequencyRank: 94,
+      synsets: [
+        {
+          id: "syn_clear_lucid",
+          pos: "a",
+          definition: "Easy to perceive, understand, or interpret without ambiguity",
+          examples: ["clear writing", "a clear explanation"],
+          lemmas: ["lucid", "transparent", "obvious", "evident", "plain", "distinct", "unambiguous", "articulate"],
+          antonyms: ["unclear", "vague", "ambiguous", "obscure", "muddy"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_clear_crystalline",
+          pos: "a",
+          definition: "Exhibiting flawless clarity and immaculate precision",
+          examples: ["crystalline precision", "unequivocal clarity"],
+          lemmas: ["crystalline", "pellucid", "unequivocal", "perspicuous", "incisive"],
+          antonyms: ["cryptic"],
+          level: "academic",
+          category: "formal"
+        }
+      ]
+    }
+  ],
+  "happy": [
+    {
+      lemma: "happy",
+      pos: "a",
+      frequencyRank: 92,
+      synsets: [
+        {
+          id: "syn_happy_joyful",
+          pos: "a",
+          definition: "Feeling or showing pleasure, contentment, or joy",
+          examples: ["a happy mood", "happy with the result"],
+          lemmas: ["joyful", "cheerful", "glad", "delighted", "content", "thrilled", "elated", "pleased"],
+          antonyms: ["sad", "unhappy", "sorrowful", "depressed", "miserable"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_happy_ecstatic",
+          pos: "a",
+          definition: "Filled with intense, overflowing delight or jubilation",
+          examples: ["ecstatic celebrations"],
+          lemmas: ["ecstatic", "euphoric", "jubilant", "overjoyed", "blissful", "radiant"],
+          antonyms: ["despairing"],
+          level: "professional",
+          category: "stronger"
+        }
+      ]
+    }
+  ],
+  "sad": [
+    {
+      lemma: "sad",
+      pos: "a",
+      frequencyRank: 88,
+      synsets: [
+        {
+          id: "syn_sad_sorrowful",
+          pos: "a",
+          definition: "Feeling or showing sorrow; unhappy or despondent",
+          examples: ["a sad moment", "feeling sad"],
+          lemmas: ["sorrowful", "unhappy", "melancholy", "gloomy", "heartbroken", "dejected", "depressed", "downcast"],
+          antonyms: ["happy", "cheerful", "joyful", "glad"],
+          level: "natural",
+          category: "similar"
+        }
+      ]
+    }
+  ],
+  "good": [
+    {
+      lemma: "good",
+      pos: "a",
+      frequencyRank: 99,
+      synsets: [
+        {
+          id: "syn_good_satisfactory",
+          pos: "a",
+          definition: "To be desired or approved of; of high quality or standard",
+          examples: ["a good essay", "good work"],
+          lemmas: ["fine", "solid", "satisfactory", "commendable", "decent", "sound", "worthy", "positive"],
+          antonyms: ["bad", "poor", "inferior", "terrible"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_good_excellent",
+          pos: "a",
+          definition: "Possessing superior, masterful, or preeminent quality",
+          examples: ["an excellent presentation"],
+          lemmas: ["excellent", "superb", "outstanding", "exceptional", "first-rate", "stellar", "exemplary"],
+          antonyms: ["abysmal", "atrocious"],
           level: "professional",
           category: "stronger"
         },
         {
-          id: "syn_easy_3",
+          id: "syn_good_great",
           pos: "a",
-          definition: "Not hard at all",
-          examples: ["simple fix"],
-          lemmas: ["simple", "plain"],
-          antonyms: ["hard"],
+          definition: "Great or nice",
+          examples: ["a good time"],
+          lemmas: ["great", "nice", "pleasant"],
+          antonyms: [],
           level: "simple",
           category: "simpler"
+        }
+      ]
+    }
+  ],
+  "bad": [
+    {
+      lemma: "bad",
+      pos: "a",
+      frequencyRank: 95,
+      synsets: [
+        {
+          id: "syn_bad_poor",
+          pos: "a",
+          definition: "Of poor quality or a low standard; unwelcome or harmful",
+          examples: ["a bad habit", "bad weather"],
+          lemmas: ["poor", "substandard", "faulty", "unfavorable", "inferior", "negative", "adverse"],
+          antonyms: ["good", "excellent", "superior", "fine"],
+          level: "natural",
+          category: "similar"
         },
         {
-          id: "syn_easy_4",
+          id: "syn_bad_severe",
           pos: "a",
-          definition: "Executed with effortless facility or academic poise",
-          examples: ["facile demonstration"],
-          lemmas: ["facile", "unencumbered", "expedient"],
-          antonyms: ["onerous"],
-          level: "academic",
-          category: "formal"
+          definition: "Extremely harmful, severe, or catastrophic",
+          examples: ["a terrible disaster"],
+          lemmas: ["terrible", "dreadful", "atrocious", "abysmal", "catastrophic", "deplorable"],
+          antonyms: ["stellar"],
+          level: "professional",
+          category: "stronger"
         }
       ]
     }
@@ -925,92 +1520,244 @@ export const WORDNET_DATABASE: Record<string, WordEntry[]> = {
       frequencyRank: 96,
       synsets: [
         {
-          id: "syn_great_1",
+          id: "syn_great_grand",
           pos: "a",
-          definition: "Of an extent, amount, or intensity considerably above average",
-          examples: ["great success", "great joy"],
-          lemmas: ["grand", "major", "considerable", "substantial", "superb"],
-          antonyms: ["small", "minor", "insignificant", "poor"],
+          definition: "Of an extent, amount, or intensity considerably above the normal or average",
+          examples: ["a great success", "great achievements"],
+          lemmas: ["grand", "major", "considerable", "substantial", "prominent", "immense", "formidable"],
+          antonyms: ["small", "minor", "petty", "trivial"],
           level: "natural",
           category: "similar"
         },
         {
-          id: "syn_great_2",
+          id: "syn_great_distinguished",
           pos: "a",
-          definition: "Monumentally distinguished and possessing extraordinary excellence",
-          examples: ["magnificent achievement", "phenomenal performance"],
-          lemmas: ["magnificent", "phenomenal", "colossal", "stupendous", "illustrious"],
-          antonyms: ["mediocre", "substandard"],
+          definition: "Eminently distinguished and renowned",
+          examples: ["a great historical figure"],
+          lemmas: ["distinguished", "eminent", "illustrious", "renowned", "acclaimed"],
+          antonyms: ["obscure"],
+          level: "academic",
+          category: "formal"
+        }
+      ]
+    }
+  ],
+  "new": [
+    {
+      lemma: "new",
+      pos: "a",
+      frequencyRank: 97,
+      synsets: [
+        {
+          id: "syn_new_fresh",
+          pos: "a",
+          definition: "Not existing before; made, introduced, or discovered recently or now for the first time",
+          examples: ["the new method", "a new idea"],
+          lemmas: ["fresh", "recent", "novel", "modern", "contemporary", "innovative", "original", "latest"],
+          antonyms: ["old", "ancient", "outdated", "archaic", "stale"],
+          level: "natural",
+          category: "similar"
+        },
+        {
+          id: "syn_new_cutting_edge",
+          pos: "a",
+          definition: "Representing the state of the art in innovation",
+          examples: ["cutting-edge technology"],
+          lemmas: ["cutting-edge", "state-of-the-art", "groundbreaking", "pioneering", "revolutionary"],
+          antonyms: ["obsolete"],
           level: "professional",
           category: "stronger"
         }
       ]
     }
   ],
-  "beautiful": [
+  "old": [
     {
-      lemma: "beautiful",
+      lemma: "old",
       pos: "a",
-      frequencyRank: 91,
+      frequencyRank: 95,
       synsets: [
         {
-          id: "syn_beautiful_1",
+          id: "syn_old_aged",
           pos: "a",
-          definition: "Pleasing the senses or mind aesthetically",
-          examples: ["a beautiful design", "beautiful typography"],
-          lemmas: ["attractive", "lovely", "gorgeous", "handsome", "alluring"],
-          antonyms: ["ugly", "hideous", "unattractive", "repulsive"],
+          definition: "Having lived for a long time; no longer young or newly created",
+          examples: ["an old house", "old traditions"],
+          lemmas: ["aged", "elderly", "ancient", "mature", "traditional", "longstanding", "vintage"],
+          antonyms: ["new", "young", "fresh", "novel", "modern"],
           level: "natural",
           category: "similar"
-        },
-        {
-          id: "syn_beautiful_2",
-          pos: "a",
-          definition: "Strikingly exquisite and breathtakingly superb",
-          examples: ["stunning visual presentation", "exquisite architecture"],
-          lemmas: ["exquisite", "stunning", "breathtaking", "resplendent", "magnificent"],
-          antonyms: ["grotesque"],
-          level: "professional",
-          category: "stronger"
-        },
-        {
-          id: "syn_beautiful_3",
-          pos: "a",
-          definition: "Pretty and nice to look at",
-          examples: ["pretty picture"],
-          lemmas: ["pretty", "nice", "fine"],
-          antonyms: ["plain"],
-          level: "simple",
-          category: "simpler"
-        },
-        {
-          id: "syn_beautiful_4",
-          pos: "a",
-          definition: "Possessing transcendent aesthetic harmony and grace",
-          examples: ["pulchritudinous form", "sublime harmony"],
-          lemmas: ["sublime", "aesthetic", "pulchritudinous", "beauteous"],
-          antonyms: ["unsightly"],
-          level: "academic",
-          category: "formal"
         }
       ]
     }
   ]
 };
 
-// Algorithmic Fallback Generator for any English word
+// Semantic Domain Clusters for Intelligent Fallback
+interface SemanticCluster {
+  keywords: string[];
+  pos: POS;
+  definition: (w: string) => string;
+  similar: string[];
+  stronger: string[];
+  simpler: string[];
+  formal: string[];
+  antonyms?: string[];
+}
+
+const SEMANTIC_CLUSTERS: SemanticCluster[] = [
+  {
+    keywords: ["school", "college", "university", "academy", "class", "course", "lesson", "campus", "faculty", "curriculum", "grade", "exam", "test", "lecture", "homework", "scholarship", "diploma"],
+    pos: "n",
+    definition: (w) => `An institution, department, or structured domain dedicated to education and learning.`,
+    similar: ["institution", "academy", "seminary", "department", "curriculum", "discipline"],
+    stronger: ["center of excellence", "institute", "foundational academy"],
+    simpler: ["place of learning", "center", "hall"],
+    formal: ["educational establishment", "academic faculty", "pedagogical division"]
+  },
+  {
+    keywords: ["student", "pupil", "learner", "scholar", "undergraduate", "trainee", "apprentice", "disciple"],
+    pos: "n",
+    definition: (w) => `A person engaged in learning, studying, or academic training.`,
+    similar: ["pupil", "learner", "scholar", "undergraduate", "trainee", "apprentice"],
+    stronger: ["dedicated scholar", "emerging researcher", "academician"],
+    simpler: ["learner", "classmate"],
+    formal: ["matriculant", "disciple", "academic candidate"],
+    antonyms: ["teacher", "instructor", "professor"]
+  },
+  {
+    keywords: ["teacher", "instructor", "educator", "professor", "tutor", "mentor", "trainer", "coach"],
+    pos: "n",
+    definition: (w) => `A professional who imparts knowledge, skills, and academic guidance to learners.`,
+    similar: ["instructor", "educator", "tutor", "professor", "mentor", "trainer"],
+    stronger: ["mentor", "guide", "master", "luminary"],
+    simpler: ["coach", "guide"],
+    formal: ["pedagogue", "academic faculty", "preceptor"],
+    antonyms: ["student", "pupil", "learner"]
+  },
+  {
+    keywords: ["write", "author", "compose", "draft", "pen", "script", "record", "inscribe", "codify"],
+    pos: "v",
+    definition: (w) => `To compose, formulate, or document thoughts and information into text.`,
+    similar: ["compose", "draft", "author", "pen", "record", "formulate"],
+    stronger: ["chronicle", "document", "codify", "mastermind"],
+    simpler: ["write down", "note", "type"],
+    formal: ["promulgate", "inscribe", "transcribe"],
+    antonyms: ["erase", "delete", "obliterate"]
+  },
+  {
+    keywords: ["think", "reflect", "ponder", "deliberate", "contemplate", "reason", "meditate", "speculate"],
+    pos: "v",
+    definition: (w) => `To engage in mental reflection, reasoning, or formulating opinions.`,
+    similar: ["ponder", "reflect", "consider", "reason", "deliberate", "contemplate"],
+    stronger: ["analyze thoroughly", "scrutinize", "synthesize"],
+    simpler: ["wonder", "look at", "figure"],
+    formal: ["cogitate", "ratiocinate", "cerebrate"]
+  },
+  {
+    keywords: ["make", "create", "build", "produce", "generate", "construct", "form", "fashion", "fabricate"],
+    pos: "v",
+    definition: (w) => `To bring into existence, construct, or craft through effort.`,
+    similar: ["generate", "produce", "build", "craft", "form", "construct", "fashion"],
+    stronger: ["engineer", "pioneer", "inaugurate", "revolutionize"],
+    simpler: ["make", "build", "set up"],
+    formal: ["fabricate", "instigate", "synthesize"],
+    antonyms: ["destroy", "dismantle", "ruin"]
+  },
+  {
+    keywords: ["enhance", "improve", "upgrade", "refine", "elevate", "boost", "strengthen", "advance"],
+    pos: "v",
+    definition: (w) => `To increase in quality, capability, value, or excellence.`,
+    similar: ["enhance", "upgrade", "refine", "elevate", "boost", "strengthen", "advance"],
+    stronger: ["optimize", "maximize", "streamline", "revolutionize"],
+    simpler: ["better", "help", "fix up"],
+    formal: ["ameliorate", "augment", "sublimate"],
+    antonyms: ["worsen", "impair", "degrade", "deteriorate"]
+  },
+  {
+    keywords: ["device", "tool", "machine", "apparatus", "instrument", "gadget", "appliance", "mechanism"],
+    pos: "n",
+    definition: (w) => `An instrument, machine, or mechanical/electronic piece of equipment.`,
+    similar: ["tool", "instrument", "apparatus", "machine", "mechanism", "appliance"],
+    stronger: ["engine", "system", "advanced instrument"],
+    simpler: ["tool", "gear", "kit"],
+    formal: ["apparatus", "implement", "contrivance"]
+  },
+  {
+    keywords: ["place", "location", "area", "region", "zone", "sector", "site", "venue", "district", "locality"],
+    pos: "n",
+    definition: (w) => `A particular position, point, or area in physical or virtual space.`,
+    similar: ["location", "area", "region", "site", "venue", "spot", "territory"],
+    stronger: ["destination", "center", "hub", "nexus"],
+    simpler: ["spot", "space", "room"],
+    formal: ["locality", "environs", "vicinity"]
+  }
+];
+
+/**
+ * Intelligent Fallback Generator
+ * Categorizes any unindexed word dynamically using semantic domain clusters,
+ * morphological derivations, and POS-specific templates rather than static generic text.
+ */
 export function generateFallbackWordEntry(word: string): WordEntry | null {
   const clean = word.toLowerCase().trim();
   if (!clean || clean.length < 2) return null;
 
-  // If already in database
+  // 1. Check if directly present
   if (WORDNET_DATABASE[clean]) {
     return WORDNET_DATABASE[clean][0];
   }
 
-  // Derive guessed POS and basic lexical relationships
+  // 2. Check semantic cluster match
+  for (const cluster of SEMANTIC_CLUSTERS) {
+    if (cluster.keywords.some(k => clean.includes(k) || k.includes(clean))) {
+      const synsets: SynsetRecord[] = [
+        {
+          id: `syn_${clean}_similar`,
+          pos: cluster.pos,
+          definition: cluster.definition(clean),
+          lemmas: cluster.similar.filter(s => s !== clean),
+          antonyms: cluster.antonyms || [],
+          level: 'natural',
+          category: 'similar'
+        },
+        {
+          id: `syn_${clean}_stronger`,
+          pos: cluster.pos,
+          definition: `Elevated and high-impact terms corresponding to ${clean}`,
+          lemmas: cluster.stronger.filter(s => s !== clean),
+          level: 'professional',
+          category: 'stronger'
+        },
+        {
+          id: `syn_${clean}_simpler`,
+          pos: cluster.pos,
+          definition: `Everyday and simplified alternatives for ${clean}`,
+          lemmas: cluster.simpler.filter(s => s !== clean),
+          level: 'simple',
+          category: 'simpler'
+        },
+        {
+          id: `syn_${clean}_formal`,
+          pos: cluster.pos,
+          definition: `Academic and professional vocabulary relating to ${clean}`,
+          lemmas: cluster.formal.filter(s => s !== clean),
+          level: 'academic',
+          category: 'formal'
+        }
+      ];
+
+      return {
+        lemma: clean,
+        pos: cluster.pos,
+        frequencyRank: 60,
+        synsets
+      };
+    }
+  }
+
+  // 3. Dynamic Morphological & POS Derivation
   let pos: POS = 'n';
-  let definition = `Relating to "${clean}" or functioning as an expression of ${clean}.`;
+  let definition = `A designated concept or term relating to "${clean}".`;
   let similar: string[] = [];
   let stronger: string[] = [];
   let simpler: string[] = [];
@@ -1019,31 +1766,42 @@ export function generateFallbackWordEntry(word: string): WordEntry | null {
 
   if (clean.endsWith('ly')) {
     pos = 'r';
-    definition = `In a ${clean.slice(0, -2)} manner or way.`;
-    similar = [`${clean.slice(0, -2)}ily`, 'suitably', 'distinctly'];
-  } else if (clean.endsWith('able') || clean.endsWith('ive') || clean.endsWith('ful') || clean.endsWith('ous') || clean.endsWith('ic') || clean.endsWith('al')) {
+    const base = clean.slice(0, -2);
+    definition = `In a ${base} manner or characteristic state.`;
+    similar = [`${base}ily`, 'suitably', 'clearly', 'distinctly', 'effectively'];
+    stronger = ['emphatically', 'decisively', 'predominantly'];
+    simpler = ['well', 'truly', 'simply'];
+    formal = ['substantively', 'systematically', 'manifestly'];
+  } else if (clean.endsWith('able') || clean.endsWith('ible') || clean.endsWith('ive') || clean.endsWith('ful') || clean.endsWith('ous') || clean.endsWith('ic') || clean.endsWith('al')) {
     pos = 'a';
-    definition = `Characterized by or exhibiting the qualities of ${clean}.`;
-    similar = ['characteristic', 'relevant', 'applicable', 'distinct'];
-    stronger = ['prominent', 'definitive', 'exemplary'];
-    simpler = ['good', 'clear'];
-    formal = ['substantive', 'salient'];
+    definition = `Characterized by or exhibiting the properties of ${clean}.`;
+    similar = ['characteristic', 'relevant', 'applicable', 'meaningful', 'distinct'];
+    stronger = ['exemplary', 'paramount', 'definitive', 'vital'];
+    simpler = ['good', 'clear', 'useful'];
+    formal = ['substantive', 'salient', 'consequential'];
     antonyms = [`un${clean}`, 'inapplicable'];
   } else if (clean.endsWith('ize') || clean.endsWith('ate') || clean.endsWith('en') || clean.endsWith('fy')) {
     pos = 'v';
-    definition = `To cause to become or to perform the action of ${clean}.`;
-    similar = ['execute', 'implement', 'apply', 'conduct'];
-    stronger = ['streamline', 'maximize', 'master'];
-    simpler = ['make', 'do'];
-    formal = ['instigate', 'consummate'];
-  } else {
-    // Default noun / entity
+    definition = `To perform the operation or cause the state of ${clean}.`;
+    similar = ['execute', 'implement', 'apply', 'conduct', 'operate'];
+    stronger = ['maximize', 'streamline', 'master', 'orchestrate'];
+    simpler = ['make', 'do', 'set'];
+    formal = ['instigate', 'consummate', 'synthesize'];
+  } else if (clean.endsWith('tion') || clean.endsWith('sion') || clean.endsWith('ment') || clean.endsWith('ness') || clean.endsWith('ity')) {
     pos = 'n';
-    definition = `A concept, entity, or instance denoted by the term "${clean}".`;
-    similar = ['aspect', 'element', 'component', 'factor'];
-    stronger = ['pillar', 'cornerstone', 'paradigm'];
-    simpler = ['part', 'thing', 'item'];
-    formal = ['phenomenon', 'manifestation'];
+    definition = `The state, quality, or process of ${clean}.`;
+    similar = ['procedure', 'framework', 'condition', 'expression', 'attribute'];
+    stronger = ['foundation', 'manifestation', 'paradigm', 'benchmark'];
+    simpler = ['state', 'way', 'part'];
+    formal = ['phenomenon', 'methodology', 'configuration'];
+  } else {
+    // Dynamic noun fallback with varied lexical alternatives based on word characteristics
+    pos = 'n';
+    definition = `A term denoting the concept, object, or entity "${clean}".`;
+    similar = ['matter', 'subject', 'substance', 'element', 'detail'];
+    stronger = ['core', 'cornerstone', 'focal point'];
+    simpler = ['item', 'thing', 'topic'];
+    formal = ['entity', 'phenomenon', 'manifestation'];
   }
 
   const synsets: SynsetRecord[] = [
@@ -1055,41 +1813,32 @@ export function generateFallbackWordEntry(word: string): WordEntry | null {
       antonyms,
       level: 'natural',
       category: 'similar'
-    }
-  ];
-
-  if (stronger.length > 0) {
-    synsets.push({
+    },
+    {
       id: `syn_gen_${clean}_stronger`,
       pos,
-      definition: `Intensified or elevated forms of ${clean}`,
+      definition: `Elevated alternatives related to ${clean}`,
       lemmas: stronger,
       level: 'professional',
       category: 'stronger'
-    });
-  }
-
-  if (simpler.length > 0) {
-    synsets.push({
+    },
+    {
       id: `syn_gen_${clean}_simpler`,
       pos,
-      definition: `Direct or simplified terms related to ${clean}`,
+      definition: `Direct terms related to ${clean}`,
       lemmas: simpler,
       level: 'simple',
       category: 'simpler'
-    });
-  }
-
-  if (formal.length > 0) {
-    synsets.push({
+    },
+    {
       id: `syn_gen_${clean}_formal`,
       pos,
-      definition: `Scholarly and academic expressions corresponding to ${clean}`,
+      definition: `Academic and formal expressions corresponding to ${clean}`,
       lemmas: formal,
       level: 'academic',
       category: 'formal'
-    });
-  }
+    }
+  ];
 
   return {
     lemma: clean,
@@ -1099,6 +1848,9 @@ export function generateFallbackWordEntry(word: string): WordEntry | null {
   };
 }
 
+/**
+ * Lemmatizes word with inflection stripping and checks database
+ */
 export function lemmatizeWord(word: string): { lemma: string; posCandidate?: POS } {
   const lower = word.toLowerCase().trim();
   if (WORDNET_DATABASE[lower]) {
@@ -1120,10 +1872,14 @@ export function lemmatizeWord(word: string): { lemma: string; posCandidate?: POS
   if (lower.endsWith('ed') && lower.length > 3) {
     const candidate1 = lower.slice(0, -2);
     if (WORDNET_DATABASE[candidate1]) return { lemma: candidate1, posCandidate: 'v' };
+    const candidate2 = lower.slice(0, -1);
+    if (WORDNET_DATABASE[candidate2]) return { lemma: candidate2, posCandidate: 'v' };
   }
   if (lower.endsWith('ing') && lower.length > 4) {
     const candidate1 = lower.slice(0, -3);
     if (WORDNET_DATABASE[candidate1]) return { lemma: candidate1, posCandidate: 'v' };
+    const candidate2 = lower.slice(0, -3) + 'e';
+    if (WORDNET_DATABASE[candidate2]) return { lemma: candidate2, posCandidate: 'v' };
   }
 
   return { lemma: lower };
